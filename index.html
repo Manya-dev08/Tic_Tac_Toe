@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON TIC-TAC-TOE 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu" class="screen">
+        <h1 class="logo">NEON<br><span>TIC-TAC-TOE</span></h1>
+        <div class="difficulty-box">
+            <p>SELECT OPERATING LEVEL</p>
+            <button class="menu-btn" onclick="startGame('easy')">EASY</button>
+            <button class="menu-btn" onclick="startGame('moderate')">MODERATE</button>
+            <button class="menu-btn" onclick="startGame('hard')">HARD (UNBEATABLE)</button>
+        </div>
+    </div>
+
+    <div id="game-screen" class="screen hidden">
+        <div class="game-header">
+            <span id="difficulty-label">LEVEL: HARD</span>
+            <div id="status">YOUR TURN</div>
+        </div>
+        <div class="grid" id="grid"></div>
+        <div class="controls">
+            <button class="menu-btn small" onclick="backToMenu()">BACK</button>
+            <button class="menu-btn small" onclick="resetGame()">RESET</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
