@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Deluxe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="home-screen" class="container">
+        <div class="logo">
+            <span class="o">O</span> TIC <br> TAC <br> <span class="x">X</span> TOE
+        </div>
+        <div class="level-select">
+            <p>Select Difficulty</p>
+            <button onclick="startGame('easy')">Easy</button>
+            <button onclick="startGame('hard')">Hard</button>
+        </div>
+    </div>
+
+    <div id="game-screen" class="container" style="display: none;">
+        <div id="status">Your Turn (X)</div>
+        <div class="board" id="board">
+            <div class="cell" id="c0" onclick="handleCellClick(0)"></div>
+            <div class="cell" id="c1" onclick="handleCellClick(1)"></div>
+            <div class="cell" id="c2" onclick="handleCellClick(2)"></div>
+            <div class="cell" id="c3" onclick="handleCellClick(3)"></div>
+            <div class="cell" id="c4" onclick="handleCellClick(4)"></div>
+            <div class="cell" id="c5" onclick="handleCellClick(5)"></div>
+            <div class="cell" id="c6" onclick="handleCellClick(6)"></div>
+            <div class="cell" id="c7" onclick="handleCellClick(7)"></div>
+            <div class="cell" id="c8" onclick="handleCellClick(8)"></div>
+        </div>
+        <button class="menu-btn" onclick="backToMenu()">Back to Menu</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

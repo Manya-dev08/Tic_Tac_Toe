@@ -1,0 +1,72 @@
+:root {
+    --bg-color: #4b2a8c;
+    --pale-pink: #ff85e4;
+    --pale-orange: #ffcc70;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background: linear-gradient(135deg, #4b2a8c 0%, #30195e 100%);
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container { text-align: center; }
+
+.logo { font-size: 4rem; font-weight: 900; line-height: 0.9; margin-bottom: 2rem; }
+.o { color: var(--pale-pink); }
+.x { color: var(--pale-orange); }
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 15px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: var(--glass);
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cell:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* The Pop Animation */
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.cell span {
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+button {
+    background: linear-gradient(to right, var(--pale-pink), var(--pale-orange));
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.menu-btn { background: var(--glass); margin-top: 20px; font-size: 0.9rem; }
