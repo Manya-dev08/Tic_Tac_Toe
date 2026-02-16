@@ -1,87 +1,56 @@
 :root {
     --bg: #050b18;
-    --neon-blue: #00f2ff;
-    --neon-purple: #bc13fe;
-    --glass: rgba(255, 255, 255, 0.03);
+    --card: #0f172a;
+    --neon: #00f2ff;
+    --text: #f8fafc;
 }
 
 body {
     background-color: var(--bg);
-    color: white;
-    font-family: 'Orbitron', sans-serif; /* Use any sans-serif if font not loaded */
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    overflow: hidden;
 }
 
-.screen {
-    text-align: center;
-    transition: opacity 0.5s ease;
+.screen { text-align: center; width: 340px; }
+.hidden { display: none !important; }
+
+h1 { font-size: 2.5rem; letter-spacing: 5px; margin-bottom: 30px; }
+h1 span { color: var(--neon); text-shadow: 0 0 10px var(--neon); }
+
+.setup-group p { font-size: 0.7rem; color: #64748b; letter-spacing: 2px; margin-bottom: 10px; }
+.choice-row, .diff-row { display: flex; gap: 8px; margin-bottom: 20px; }
+
+.choice-btn, .diff-btn {
+    flex: 1; background: var(--card); border: 1px solid #1e293b;
+    color: white; padding: 12px; border-radius: 8px; cursor: pointer; font-size: 0.8rem;
 }
 
-.hidden { display: none; opacity: 0; }
+.active { border-color: var(--neon); box-shadow: 0 0 10px var(--neon); color: var(--neon); }
 
-.logo {
-    font-size: 3rem;
-    letter-spacing: 10px;
-    text-shadow: 0 0 20px var(--neon-blue);
-    margin-bottom: 50px;
+.start-btn {
+    width: 100%; padding: 15px; background: var(--neon); color: black;
+    border: none; border-radius: 8px; font-weight: bold; cursor: pointer;
 }
 
-.logo span { color: var(--neon-purple); text-shadow: 0 0 20px var(--neon-purple); }
-
-.difficulty-box {
-    background: var(--glass);
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-}
-
-.menu-btn {
-    display: block;
-    width: 100%;
-    padding: 15px 30px;
-    margin: 15px 0;
-    background: transparent;
-    border: 1px solid var(--neon-blue);
-    color: var(--neon-blue);
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-    border-radius: 5px;
-    letter-spacing: 2px;
-}
-
-.menu-btn:hover {
-    background: var(--neon-blue);
-    color: black;
-    box-shadow: 0 0 20px var(--neon-blue);
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 15px;
-    margin: 20px 0;
-}
+.grid { display: grid; grid-template-columns: repeat(3, 100px); gap: 10px; margin: 20px 0; }
 
 .cell {
-    width: 100px;
-    height: 100px;
-    background: var(--glass);
-    border: 1px solid rgba(255,255,255,0.1);
-    font-size: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    width: 100px; height: 100px; background: var(--card); border-radius: 10px;
+    font-size: 2.5rem; display: flex; align-items: center; justify-content: center; cursor: pointer;
 }
 
-.cell.x { color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
-.cell.o { color: var(--neon-purple); text-shadow: 0 0 10px var(--neon-purple); }
+.cell.x { color: var(--neon); }
+.cell.o { color: #bc13fe; }
 
-.small { width: auto; display: inline-block; margin: 10px; padding: 10px 20px; }
+#status { font-size: 1.1rem; height: 25px; font-weight: bold; }
+#timer { font-size: 0.8rem; color: #64748b; height: 20px; margin-bottom: 10px; }
+
+.reset-link {
+    background: none; border: none; color: #64748b; 
+    text-decoration: underline; cursor: pointer; font-size: 0.8rem;
+}

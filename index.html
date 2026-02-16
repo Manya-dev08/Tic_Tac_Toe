@@ -3,30 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEON TIC-TAC-TOE 2026</title>
+    <title>Tic-Tac-Toe Pro 2026</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="menu" class="screen">
-        <h1 class="logo">NEON<br><span>TIC-TAC-TOE</span></h1>
-        <div class="difficulty-box">
-            <p>SELECT OPERATING LEVEL</p>
-            <button class="menu-btn" onclick="startGame('easy')">EASY</button>
-            <button class="menu-btn" onclick="startGame('moderate')">MODERATE</button>
-            <button class="menu-btn" onclick="startGame('hard')">HARD (UNBEATABLE)</button>
+
+    <div id="setup-screen" class="screen">
+        <h1>NEON<span>.TIC</span></h1>
+        
+        <div class="setup-group">
+            <p>CHOOSE SIDE</p>
+            <div class="choice-row">
+                <button class="choice-btn active" id="btnX" onclick="setSymbol('X')">X</button>
+                <button class="choice-btn" id="btnO" onclick="setSymbol('O')">O</button>
+            </div>
         </div>
+
+        <div class="setup-group">
+            <p>CPU DIFFICULTY</p>
+            <div class="diff-row">
+                <button class="diff-btn" id="easy" onclick="setDiff('easy')">EASY</button>
+                <button class="diff-btn active" id="moderate" onclick="setDiff('moderate')">MODERATE</button>
+                <button class="diff-btn" id="hard" onclick="setDiff('hard')">HARD</button>
+            </div>
+        </div>
+
+        <button class="start-btn" onclick="startGame()">START GAME</button>
     </div>
 
     <div id="game-screen" class="screen hidden">
-        <div class="game-header">
-            <span id="difficulty-label">LEVEL: HARD</span>
-            <div id="status">YOUR TURN</div>
-        </div>
+        <div id="status">YOUR TURN</div>
+        <div id="timer"></div>
         <div class="grid" id="grid"></div>
-        <div class="controls">
-            <button class="menu-btn small" onclick="backToMenu()">BACK</button>
-            <button class="menu-btn small" onclick="resetGame()">RESET</button>
-        </div>
+        <button class="reset-link" onclick="backToMenu()">CHANGE SYMBOL / SETTINGS</button>
     </div>
 
     <script src="script.js"></script>
